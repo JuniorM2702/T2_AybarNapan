@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './dashboard/home/home.component';
 import { AuthGuard } from './auth.guard';
-import { Pregunta2Component } from './pregunta2/pregunta2.component';
-import { Pregunta1Component } from './pregunta1/pregunta1.component';
-import { Pregunta3Component } from './pregunta3/pregunta3.component';
+import { Pregunta2Component } from './dashboard/pregunta2/pregunta2.component';
+import { Pregunta1Component } from './dashboard/pregunta1/pregunta1.component';
+import { Pregunta3Component } from './dashboard/pregunta3/pregunta3.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent },
