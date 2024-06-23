@@ -1,1 +1,26 @@
-<p>pregunta1 works!</p>
+<div class="container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Calculadora de Precio de Compra</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="form">
+          <mat-form-field>
+            <mat-label>Ingrese el Precio Unitario</mat-label>
+            <input matInput type="number" [(ngModel)]="precioUnitario">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Ingrese la Cantidad Adquirida</mat-label>
+            <input matInput type="number" [(ngModel)]="cantidad">
+          </mat-form-field>
+        </div>
+        <div class="result">
+          <p *ngIf="precioFinal !== 0">El precio final a pagar es: {{ precioFinal | currency }}</p>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="calcularPrecio()">Calcular Precio</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  
