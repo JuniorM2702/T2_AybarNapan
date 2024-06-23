@@ -12,13 +12,12 @@ import { MaterialModule } from '../../../material/material.module';
 })
 export class LoginComponent {
 
-  constructor(private router: Router,
-    private authService: AuthService
-  ) { }
-  
-  submit(usuario: HTMLInputElement, password: HTMLInputElement): void {
-    if (this.authService.login(usuario.value, password.value)) {
-      this.router.navigateByUrl("/dashboard"); 
+  constructor(private authService: AuthService) { }
+
+  submit(username: HTMLInputElement, password: HTMLInputElement): void {
+    if (this.authService.login(username.value, password.value)) {
+      console.log('Inicio de sesión exitoso');
+      window.location.href = "/dashboard"
     } else {
       alert('Credenciales inválidas');
     }

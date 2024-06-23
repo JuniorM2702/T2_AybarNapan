@@ -1,31 +1,27 @@
-// src/app/auth.service.ts
-
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class AuthService {
-  private validUser = 'Apellido';
-  private validPassword = '12345';
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   login(username: string, password: string): boolean {
-    if (username === this.validUser && password === this.validPassword) {
-      sessionStorage.setItem('user', username);
-      return true;
+    if (username === "Aybar" && password === "12345") {
+      sessionStorage.setItem("isLogged", "true");
+      return true; 
+    } else {
+      return false;
     }
-    return false;
   }
 
   logout(): void {
-    sessionStorage.removeItem('user');
-    this.router.navigate(['/login']);
+    sessionStorage.removeItem("isLogged");
   }
 
-  isAuthenticated(): boolean {
-    return sessionStorage.getItem('user') !== null;
+  isLogged(): boolean {
+    return !!sessionStorage.getItem("isLogged");
   }
 }

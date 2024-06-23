@@ -1,21 +1,23 @@
 <mat-card appearance="outlined">
-    <mat-card-header>
-      <mat-card-title>AUTENTICACIÓN</mat-card-title>
-    </mat-card-header>
-    
-    <mat-card-content>
-        <div class="form">
-            <mat-form-field>
-                <mat-label>Ingrese su Usuario</mat-label>
-                <input matInput type="text" #txtusuario  >
-              </mat-form-field>
-             <mat-form-field >
-                <mat-label>Ingrese su password</mat-label>
-                <input matInput type="password" #txtpassword >
-              </mat-form-field>
-        </div>        
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button (click)="submit(txtusuario, txtusuario)">INGRESAR</button>
-    </mat-card-actions>
-  </mat-card>
+  <mat-card-header>
+    <mat-card-title>AUTENTICACIÓN</mat-card-title>
+  </mat-card-header>
+  
+  <mat-card-content>
+    <div class="form">
+      <mat-form-field>
+        <mat-label>Ingrese su Usuario</mat-label>
+        <input matInput type="text" #txtusuario>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Ingrese su password</mat-label>
+        <input matInput type="password" #txtpassword>
+      </mat-form-field>
+    </div>        
+  </mat-card-content>
+  
+  <mat-card-actions>
+    <!-- Corrección: Debes pasar 'txtpassword' como segundo parámetro en el click -->
+    <button mat-raised-button (click)="submit(txtusuario, txtpassword)">INGRESAR</button>
+  </mat-card-actions>
+</mat-card>
