@@ -1,5 +1,3 @@
-// src/app/login/login.component.ts
-
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
@@ -20,7 +18,7 @@ export class LoginComponent {
   
   submit(usuario: HTMLInputElement, password: HTMLInputElement): void {
     if (this.authService.login(usuario.value, password.value)) {
-      this.router.navigateByUrl("/dashboard"); // Cambia '/home' por la ruta que desees
+      this.router.navigateByUrl("/dashboard"); 
     } else {
       alert('Credenciales inválidas');
     }
