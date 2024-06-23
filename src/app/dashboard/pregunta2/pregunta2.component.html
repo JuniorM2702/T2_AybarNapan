@@ -1,1 +1,21 @@
-<p>pregunta2 works!</p>
+<div class="container">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Calculadora de Precio de Llantas</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="form">
+          <mat-form-field>
+            <mat-label>Ingrese la Cantidad de Llantas a Comprar</mat-label>
+            <input matInput type="number" [(ngModel)]="cantidadLlantas" name="cantidadLlantas">
+          </mat-form-field>
+        </div>
+        <div class="result">
+          <p *ngIf="cantidadLlantas > 0">Total a pagar: {{ calcularTotal() | currency:'PEN':'symbol':'1.2-2' }}</p>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="calcularTotal()">Calcular Total</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
